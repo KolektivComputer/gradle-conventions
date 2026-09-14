@@ -1,12 +1,12 @@
 # gradle-conventions
 
-Org-wide Gradle conventions for [KolektivComputer](https://github.com/KolektivComputer).
+Org-wide Gradle conventions for KolektivComputer.
 
-See epic: [KolektivComputer/.github#2](https://github.com/KolektivComputer/.github/issues/2)
+Epic: https://github.com/KolektivComputer/.github/issues/2
 
 ## `computer.kolektiv.publishing`
 
-Dual Maven publish: **GitHub Packages** + optional Yuri Capital when env credentials exist.
+Registers GitHub Packages (+ optional Yuri Capital) when `maven-publish` is applied.
 
 ```kotlin
 plugins {
@@ -14,5 +14,3 @@ plugins {
     id("computer.kolektiv.publishing") version "0.1.0"
 }
 ```
-
-Publish job needs `permissions: packages: write` and `GITHUB_TOKEN`.
