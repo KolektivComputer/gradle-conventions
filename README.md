@@ -6,6 +6,8 @@ Epic: https://github.com/KolektivComputer/.github/issues/2
 
 JSR / npm scope: `@kolektiv` (owned).
 
+Maven groupId family for consuming libraries: `computer.kolektiv.*` (not `dev.kolektiv.*`). This plugin registers publish *repositories*; each repo still sets its own `group`.
+
 ## `computer.kolektiv.publishing`
 
 Registers GitHub Packages (+ optional Yuri Capital) when `maven-publish` is applied.
