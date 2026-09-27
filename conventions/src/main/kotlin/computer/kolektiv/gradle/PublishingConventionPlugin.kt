@@ -7,7 +7,7 @@ import org.gradle.api.publish.maven.MavenPublication
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.withType
 
-/** Org publishing: GitHub Packages + optional Yuri Capital. */
+/** Org publishing: GitHub Packages (optional) + Kolektiv Nexus. */
 class PublishingConventionPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         project.pluginManager.withPlugin("maven-publish") {
@@ -54,10 +54,10 @@ class PublishingConventionPlugin : Plugin<Project> {
                     if (yuriUser.isPresent && yuriPass.isPresent) {
                         val snapshot = project.version.toString().endsWith("-SNAPSHOT", ignoreCase = true)
                         maven {
-                            name = if (snapshot) "yuriSnapshots" else "yuriReleases"
+                            name = if (snapshot) "kolektivSnapshots" else "kolektivReleases"
                             url = uri(
-                                if (snapshot) "https://repo.yuri.capital/repository/maven-snapshots/"
-                                else "https://repo.yuri.capital/repository/maven-releases/"
+                                if (snapshot) "https://repo.kolektiv.computer/repository/maven-snapshots/"
+                                else "https://repo.kolektiv.computer/repository/maven-releases/"
                             )
                             credentials {
                                 username = yuriUser.get()

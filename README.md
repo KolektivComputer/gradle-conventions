@@ -15,6 +15,6 @@ Registers GitHub Packages (+ optional Yuri Capital) when `maven-publish` is appl
 ```kotlin
 plugins {
     `maven-publish`
-    id("computer.kolektiv.publishing") version "0.1.0"
+    id("computer.kolektiv.publishing") version "0.1.1-SNAPSHOT"
 }
 ```
